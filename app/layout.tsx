@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Vitalforge Nutrition — Fuel your goals. Find your balance.',
+  title: 'SHUBZZ FITNESS — Fuel your goals. Find your balance.',
   description: 'Thoughtful sports nutrition and Ayurvedic wellness for the life you are building.',
   generator: 'v0.app',
   keywords: ['sports nutrition', 'Ayurvedic wellness', 'protein', 'wellness'],
