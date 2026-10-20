@@ -1,6 +1,7 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
+import Link from 'next/link'
 import {
   ArrowRight,
   Check,
@@ -60,6 +61,17 @@ export default function Page() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [toast, setToast] = useState('')
   const [openFaq, setOpenFaq] = useState(0)
+
+  useEffect(() => {
+    try {
+      const saved = window.localStorage.getItem('shubzz-cart')
+      if (saved) setCart(JSON.parse(saved))
+    } catch {}
+  }, [])
+
+  useEffect(() => {
+    window.localStorage.setItem('shubzz-cart', JSON.stringify(cart))
+  }, [cart])
 
   const visibleProducts = useMemo(() => products.filter((product) => {
     const matchesCategory = activeCategory === 'All' || product.category === activeCategory
